@@ -29,6 +29,7 @@ cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     i <- x$getinv()
     if( is.null(i) ) {
+      message("cache empty, calculating inverse")
       i <- solve(x$get(), ...)
       x$setinv(i)
     }
